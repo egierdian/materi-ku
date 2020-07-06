@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>EStore</title>
+    <meta name="description" content="Belanja dari rumah secara online"/>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="apple-touch-icon" href="images/icon.png">
+    <meta name="theme-color" content="#424242" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <!--Bungkus content untuk preloader-->
+    <div id="content">
+      <!-- Navigasi -->
+      <nav class="pink darken-2" role="navigation">
+        <div class="nav-wrapper container" id="nav">
+          <a href="#" class="brand-logo" id="logo-container" >EStore</a>
+          <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+          
+          <ul class="topnav right hide-on-med-and-down"></ul>
+          <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+      </nav>
+
+      <!-- Slider -->
+      <div class="container">
+        <div class="slider">
+          <ul class="slides" id="showSlider">
+            <li>
+              <img src="images/slide1.jpg">
+            </li>
+            <li>
+              <img src="images/slide2.jpg">
+            </li>
+            <li>
+              <img src="images/slide3.jpg">
+            </li>
+          </ul>
+        </div>
+        <div class="card center" style="padding-top: 30px; padding-bottom: 20px;">
+          <a href=""><img src="images/playstore.png" height="40px"></a>
+          <a href=""><img src="images/appsStore.png" height="40px"></a>
+        </div>
+      </div>
+      <!--Content-->
+      <div class="container mt-4">
+        <div class="row">
+          <!-- <h3>Produk</h3> -->
+          <div id="body-content"></div>
+        </div>
+      </div>
+      
+      <!--Footer-->
+      <footer class="page-footer pink darken-2">
+        <p style="text-align: center;">© Copyright 2020 | <!--i class="material-icons">favorite</i--> <strong></strong></p> 
+      </footer>
+      <!--End footer-->
+
+    </div>
+
+    <!--preloader-->
+    <div class="center "id="preloader">
+      <div class="row">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end preloader-->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script src="js/nav.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/slider.js"></script>
+    <script>
+
+    </script>
+  </body>
+</html>

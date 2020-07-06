@@ -1,0 +1,15 @@
+#preloader {
+	margin-top: 50%;
+}
+
+.page-footer {
+	padding-bottom: 10px;
+}
+.hr-250 {
+	width: 200px;
+	border: 3px solid #d81b60  ;
+}
+
+.container {
+	min-height: 360px;
+}
