@@ -27,9 +27,13 @@ function dataBerhasil(data) {
     let urlParam = new URLSearchParams(window.location.search);
     let idParam = urlParam.get("id");
     let tampilkan = "";
-    let desc = "";
+    let deskripsi = "";
     var ambilData = document.getElementById("body-content");
-        console.log(data.val().description);
+        // console.log(data.val().description[idParam]);
+
+        // isi deskripsi 
+        deskripsi = `<p>${data.val().description[idParam]}</p>`;
+
         data.forEach(function(data) {
             data.forEach(function(konten) {
                 if(konten.val().ID !== undefined){         
@@ -73,6 +77,10 @@ function dataBerhasil(data) {
                                     <br><br>
                                     <table class="striped" >
                                         <tbody>
+                                        <tr>
+                                            <td>Deskripsi Produk</td>
+                                            <td>${deskripsi.replace(/"/g,'')}</td>
+                                        </tr>
                                         <tr>
                                             <td>Kategori</td>
                                             <td>${konten.val().Category.replace(/"/g, '')}</td>
