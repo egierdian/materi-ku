@@ -12,30 +12,29 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var db , dataRef;
+let db , dataRef;
 
 // referensi ke database
 db = firebase.database();
 dataRef = db.ref('products/data');
 // menampilkan data ke halaman browser
-function DataProduk() {
+const DataProduk = () => {
     dataRef.on('value' , dataBerhasil , dataGagal);
 }
 
-function dataBerhasil(data) {
+const dataBerhasil = (data) => {
     // console.log(data);
-    var tampilkan = "";
-    var ambilData = document.getElementById("tampilData");
+    let tampilkan = "";
+    let ambilData = document.getElementById("tampilData");
         data.forEach(function(konten) {
-            console.log(konten.val()); //output Bandung
-            var str = konten.val().Image;
-            var nama = konten.val().Name;
-            // console.log(str);
-            var hasil = str.replace(/\\/g, '');
-            var replacenama = nama.replace(/"/g, '');
+            // console.log(konten.val()); //output Bandung
+            let str = konten.val().Image;
+            let nama = konten.val().Name;
+            let hasil = str.replace(/\\/g, '');
+            let replacenama = nama.replace(/"/g, '');
             // console.log(hasil);
             
-            console.log(konten.val().ID);
+            // console.log(konten.val().ID);
             tampilkan += `<div class="col s6 m4 l3" style="padding-top:15px;">
             
                 <div class="card" style="border-bottom: solid 2px #d81b60;">
@@ -50,36 +49,37 @@ function dataBerhasil(data) {
                 </div>
                 </div>`;
     });
-    ambilData.innerHTML = tampilkan;  
+    ambilData.innerHTML += tampilkan;  
 }
 
-function dataGagal(err) {
+const dataGagal = (err) => {
   console.log(err);
 }
 
 
 // Menampilkan kategori 
-var db_kategori , dataRef_kategori;
+let db_kategori , dataRef_kategori;
 
 // referensi ke database
 db_kategori = firebase.database();
 dataRef_kategori = db_kategori.ref('cms/setting');
 // menampilkan data ke halaman browser
-function DataKategori() {
-    dataRef_kategori.on('value' , dataKategoriBerhasil , dataKategoriGagal);
+const DataKategori = () => {
+    dataRef_kategori.on('value' , dataKategoriBerhasil , dataKategoriGagal );
 }
-function dataKategoriBerhasil(data) {
+
+const dataKategoriBerhasil = (data) => {
     // console.log(data);
-    var tampilkan = "";
-    var ambilData = document.getElementById("tampilKategori");
+    let tampilkan = "";
+    let ambilData = document.getElementById("tampilKategori");
         data.forEach(function(konten) {
             // console.log(konten.val()); //output data 
-            var a = konten.val().Tag.replace(/"/g, '');
+            let a = konten.val().Tag.replace(/"/g, '');
             if(a == "category") {
-                console.log(konten.val());
-                var image = konten.val().Image.replace(/\\/g, '');
-                var imageJadi = image.replace(/,/g, '');
-                tampilkan += `<div class="col s6 m3 l2" style="float:center; padding-top:15px;">
+                // console.log(konten.val());
+                let image = konten.val().Image.replace(/\\/g, '');
+                let imageJadi = image.replace(/,/g, '');
+                tampilkan += `<div class="col s4 m3 l2" style="float:center; padding-top:15px;">
             
                 <div class="card" style="border-bottom: solid 2px #d81b60;">
                     <div class="card-image">
@@ -98,6 +98,40 @@ function dataKategoriBerhasil(data) {
     ambilData.innerHTML = tampilkan;
 }
 
-function dataKategoriGagal(err) {
+const dataKategoriGagal = (err) => {
   console.log(err);
+}
+
+// kontak
+const Kontak = () => {
+    let kontak = document.getElementById("tampilKontak");
+    let data = "";
+    data = `
+    <div class="col l12">
+        <div class="card">
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quod laboriosam nesciunt ab, sint atque nisi nobis rerum asperiores laborum dicta tenetur magni ad. Maxime amet nulla dolorum quos ipsa.</p>
+                       
+            </div>
+        </div>
+    </div>
+    `;
+    kontak.innerHTML = data;
+}
+
+// tentang
+const Tentang = () => {
+    var tentang = document.getElementById("tampilTentang");
+    let data = "";
+    data = `
+    <div class="col l12">
+        <div class="card">
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quod laboriosam nesciunt ab, sint atque nisi nobis rerum asperiores laborum dicta tenetur magni ad. Maxime amet nulla dolorum quos ipsa.</p>
+                       
+            </div>
+        </div>
+    </div>
+    `;
+    tentang.innerHTML = data;
 }

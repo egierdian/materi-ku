@@ -12,7 +12,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var db , dataRef;
+let db , dataRef;
 
 // referensi ke database
 db = firebase.database();
@@ -23,27 +23,26 @@ console.log(dataRef);
 // menampilkan data ke halaman browser
 dataRef.on('value' , dataBerhasil , dataGagal);
 
-function dataBerhasil(data) {
+function dataBerhasil (data) {
     // console.log(data);
     let urlParam = new URLSearchParams(window.location.search);
     let idParam = urlParam.get("category");
-    console.log(idParam);
-    var tampilkan = "";
-    var ambilData = document.getElementById("body-content");
+    // console.log(idParam);
+    let tampilkan = "";
+    let ambilData = document.getElementById("body-content");
         console.log(data.val());
-        //
         data.forEach(function(konten) {
-            var c = konten.val().Category.replace(/"/g, '');
+            let c = konten.val().Category.replace(/"/g, '');
             if(c == idParam){
                 console.log(konten.val());
-                var str = konten.val().Image;
-                var nama = konten.val().Name;
+                let str = konten.val().Image;
+                let nama = konten.val().Name;
                 // console.log(str);
-                var hasil = str.replace(/\\/g, '');
-                var replacenama = nama.replace(/"/g, '');
+                let hasil = str.replace(/\\/g, '');
+                let replacenama = nama.replace(/"/g, '');
                 // console.log(hasil);
                 
-                console.log(konten.val().ID);
+                // console.log(konten.val().ID);
                 tampilkan += `
                     <div class="card" style="border-bottom: solid 2px #d81b60;">
                         <div class="card-image">
@@ -60,6 +59,6 @@ function dataBerhasil(data) {
     ambilData.innerHTML = tampilkan;  
 }
 
-function dataGagal(err) {
+function dataGagal (err) {
   console.log(err);
 }
