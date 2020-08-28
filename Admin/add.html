@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Materi-KU | Materi pelajaran terlengkap</title>
+    <meta name="description" content="Belajar dapat dengan mudah secara online."/>
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../images/icon.png">
+    <link rel="apple-touch-icon" href="../images/icon.png">
+    <meta name="theme-color" content="#d81b60" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <!--Bungkus content untuk preloader-->
+    <div id="content">
+      <!-- Navigasi -->
+      <nav class="pink darken-2" role="navigation">
+        <div class="nav-wrapper container" id="nav">
+          <a href="index.html" class="brand-logo" id="logo-container" >MATERI-KU</a>
+          <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+          <ul class="topnav right hide-on-med-and-down">
+            <li><a href="" onclick="logout()"><i class="material-icons left">forward</i>Logout</a></li>
+          </ul>
+          <ul class="sidenav" id="nav-mobile">
+            <li><a href="" onclick="logout()"><i class="material-icons left">forward</i>Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+
+      <!--Content-->
+      <div class="container" style="padding-top: 10px;">
+        <div class="col s12 m12 l12" style="padding-top:15px;">
+            <div class="card">
+                <div class="card-content" >
+                    <div class="row">
+                        <form class="col s12" style="padding-top: 20px;">
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <input id="judul_field" type="text" class="validate">
+                              <label for="judul_field">Judul</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <textarea id="isi_field" class="materialize-textarea"></textarea>
+                              <label for="isi_field">Isi</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                                
+                                <select class="browser-default" id="kategori">
+                                  <option value="" disabled selected>Kategori</option>
+                                  <option value="IPS">IPS</option>
+                                  <option value="IPA">IPA</option>
+                                  <option value="B.IND">B.Indonesia</option>
+                                  <option value="MTK">Matematika</option>
+                                  <option value="SEJ">Sejarah</option>
+                                  <option value="SBK">Seni Budaya</option>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="center">
+                            <a class="waves-effect pink darken-2 btn-large" href="" id="Simpan">Simpan</a>
+                          </div>
+                        </form>
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <!--Footer-->
+      <footer class="page-footer pink darken-1">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Materi-KU</h5>
+              <p class="grey-text text-lighten-4">Materi-KU merupakan web penyedia materi belajar.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Media</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Linkedin</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright pink darken-2">
+          <div class="container">
+            © 2020 Copyright
+          </div>
+        </div>
+      </footer>
+      <!--End footer-->
+
+    </div>
+
+    <!--preloader-->
+    <div class="center "id="preloader">
+      <div class="row">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end preloader-->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/preloader.js"></script>
+    <script src="../js/logout.js"></script>
+    
+    <script src="js/add.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+    </script>
+  </body>
+</html>

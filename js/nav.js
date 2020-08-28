@@ -52,15 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 if (page === "home") {
-                    DataProduk();
-                    DataKategori();
+                    MateriPelajaran();
                 } 
-                else if (page === "kontak") {
-                    Kontak();
-                } 
-                else if (page === "tentang") {
-                    Tentang();
-                }
             }
         };
         xhttp.open("GET", "pages/" + page + ".html", true);

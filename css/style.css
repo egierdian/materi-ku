@@ -10,6 +10,35 @@
 	border: 3px solid #d81b60  ;
 }
 
-.container {
-	min-height: 360px;
+/* .container {
+	/* min-height: 450px; 
+} */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+@media screen and (max-width: 680px){
+    .slider {
+        /* background-color: transparent; */
+        margin:0;
+        margin-bottom: -275px;
+    }
+    .slider .slides li img {
+        margin-top: -145px;
+        height: 100%; 
+        width: 100%;
+        background-position: center;
+        background-size:100% auto;
+        background-repeat: no-repeat;
+    }
+    #store {
+        margin-top: -100px;
+    }
 }

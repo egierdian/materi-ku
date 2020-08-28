@@ -4,13 +4,13 @@
     <meta charset="UTF-8"/>
     <title>Materi-KU | Materi pelajaran terlengkap</title>
     <meta name="description" content="Belajar dapat dengan mudah secara online."/>
-    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="../css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/icon.png">
-    <link rel="apple-touch-icon" href="images/icon.png">
-    <meta name="theme-color" content="#c2185b" />
+    <link rel="shortcut icon" href="../images/icon.png">
+    <link rel="apple-touch-icon" href="../images/icon.png">
+    <meta name="theme-color" content="#d81b60" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
   </head>
   <body>
     
@@ -19,17 +19,27 @@
       <!-- Navigasi -->
       <nav class="pink darken-2" role="navigation">
         <div class="nav-wrapper container" id="nav">
-          <a href="index.html" class="brand-logo" id="logo-container" style="font-size:26px;">MATERI-KU</a>
+          <a href="index.html" class="brand-logo" id="logo-container" >MATERI-KU</a>
           <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
-          
-          <ul class="topnav right hide-on-med-and-down"></ul>
-          <ul class="sidenav" id="nav-mobile"></ul>
+          <ul class="topnav right hide-on-med-and-down">
+            <li><a href="" onclick="logout()"><i class="material-icons left">forward</i>Logout</a></li>
+          </ul>
+          <ul class="sidenav" id="nav-mobile">
+            <li><a href="" onclick="logout()"><i class="material-icons left">forward</i>Logout</a></li>
+          </ul>
         </div>
       </nav>
+      
 
       <!--Content-->
-      <div class="container mt-4">
-        <div class="row" id="body-content">
+      <div class="container" style="padding-top: 10px;">
+        <div class="col s12 m12 l12" style="padding-top:15px;">
+            <div class="card" style="border-bottom: solid 2px #d81b60;">
+                <div class="card-content">
+                    <a class="waves-effect pink darken-2 btn-small" href="add.html">Tambah Artikel</a>
+                    <div id="data-show"></div>
+                </div>
+            </div>
         </div>
       </div>
       
@@ -55,11 +65,6 @@
         <div class="footer-copyright pink darken-2">
           <div class="container">
             © 2020 Copyright
-            <div class="right">  
-              <a class="grey-text text-lighten-4" href="#!">Usul Materi</a>
-              |
-              <a class="grey-text text-lighten-4" href="login.html">Dashboard</a>
-            </div>
           </div>
         </div>
       </footer>
@@ -85,11 +90,15 @@
     </div>
     <!--end preloader-->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/preloader.js"></script>
-    <script src="js/parallax.js"></script>
-    <!-- credit @egierdian : https://github.com/egierdian -->
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/preloader.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="js/konten.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+    </script>
   </body>
 </html>
